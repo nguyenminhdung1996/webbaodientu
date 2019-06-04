@@ -5,6 +5,12 @@ module.exports = {
         return db.load('select * from categories');
     },
 
+    allWithDetails: () => {
+        return db.load(`select dm.*,count(bv.danhmucbaiviet) as num_of_products
+        from tbldanhmucbaiviet dm left join  tbldanhmucbaiviet bv on dm.id=bv.danhmucbaiviet 
+        group by dm.id,dm.danhmucbaiviet`);
+    },
+
     single:id => {
         return db.load(`select * from categories where CatID =${id}`);
     },

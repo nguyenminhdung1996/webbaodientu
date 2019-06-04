@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow navbar-fixed-top  " >
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow sticky-top   " >
   <a class="navbar-brand" href="#">
       <i class="fa fa-home fa-lg" aria-hidden="true"></i> 
   </a>
@@ -97,14 +97,30 @@
     <div class="row">
       <div class="col-sm-3">
         <div class="card shadow">
-        <div class="card-header">
-            Featured
+        <h5 class="card-header">
+            DANH MỤC
+        </h5>
+        <div class="list-group">
+          {{#each lcdanhmuc}}
+          <a href="#" class="list-group-item list-group-item-action">
+              {{danhmucbaiviet}}
+            <span class="badge badge-danger float-right">{{num_of_products}}</span>
+            </a>
+          {{/each}}
+          
+          {{!-- <a href="#" class="list-group-item list-group-item-action active">
+            Cras justo odio
+          </a>
+          <a href="#" class="list-group-item list-group-item-action">
+            Dapibus ac facilisis in
+            <span class="badge badge-danger float-right">99</span>
+            </a>
+          <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
+          <a href="#" class="list-group-item list-group-item-action">
+            Porta ac consectetur ac
+            <span class="badge badge-danger float-right">99</span>
+            </a> --}}
         </div>
-        <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
     </div>
     <div class="card shadow mt-3">
         <div class="card-header">
@@ -146,7 +162,7 @@
   
     
 
-
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" ></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" ></script>

@@ -18,6 +18,8 @@ app.use(bodyParser.json());
 
 app.use(express.static('public'));
 
+app.use(require('./middlewares/danhmuc.mdw'));
+
 app.use('/categories', require('./routes/categories'));
 
 
