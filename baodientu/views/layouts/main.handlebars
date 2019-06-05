@@ -45,6 +45,12 @@
       <li class="nav-item  ">
         <a class="nav-link" href="#">pháp luật</a>
       </li>
+       <li class="nav-item  ">
+        <a class="nav-link" href="#">Thương mai điện tử</a>
+      </li>
+       <li class="nav-item  ">
+        <a class="nav-link" href="#">Tuyển sinh</a>
+      </li>
     </ul>
     
     <form class="form-inline my-2 my-lg-0">
@@ -104,8 +110,10 @@
           {{#each lcdanhmuc}}
           <a href="#" class="list-group-item list-group-item-action">
               {{danhmucbaiviet}}
-            <span class="badge badge-danger float-right">{{num_of_products}}</span>
-            </a>
+              {{#if num_of_products}}
+              <span class="badge badge-danger float-right">{{num_of_products}}</span>
+              {{/if}}
+          </a>
           {{/each}}
           
           {{!-- <a href="#" class="list-group-item list-group-item-action active">
