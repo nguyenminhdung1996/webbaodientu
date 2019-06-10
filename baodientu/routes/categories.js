@@ -13,14 +13,14 @@ router.get('/',(req,res,next) => {
 })
 
 router.get('/add', (req, res, next) => {
-    res.render('Categories/add');
-  })
+  res.render('Categories/add');
+})
 
-  router.post('/add', (req, res, next) => {
-    categoryModel.add(req.body).then(id => {
-      res.render('Categories/add');
-    }).catch(next);
-  })
+router.post('/add', (req, res, next) => {
+  categoryModel.add(req.body).then(id => {
+    res.render('Categories/add');
+  }).catch(next);
+})
 
   router.get('/edit/:id', (req, res, next) => {
     var id = req.params.id;
@@ -51,7 +51,7 @@ router.get('/add', (req, res, next) => {
   })
   
   router.post('/delete', (req, res, next) => {
-    categoryModel.delete(+req.body.CatID).then(n => {
+    categoryModel.delete(+req.body.IDDM).then(n => {
       res.redirect('/categories');
     }).catch(next);
   })

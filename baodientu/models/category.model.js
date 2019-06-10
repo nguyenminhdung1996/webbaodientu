@@ -7,31 +7,31 @@ module.exports = {
 
     allWithDetails: () => {
         return db.load(`select dm.*,count(bv.danhmucbaiviet) as num_of_products
-        from tbldanhmucbaiviet dm left join  tblbaiviet bv on dm.id=bv.danhmucbaiviet 
-        group by dm.id,dm.danhmucbaiviet`);
+        from tbldanhmucbaiviet dm left join  tblbaiviet bv on dm.IDDM=bv.danhmucbaiviet 
+        group by dm.IDDM,dm.danhmucbaiviet`);
     },
 
     single:id => {
-        return db.load(`select * from tbldanhmucbaiviet where id =${id}`);
+        return db.load(`select * from tbldanhmucbaiviet where IDDM =${id}`);
     },
     /*
     params {*} entity {catname:...}  
       */
     add: entity=> {
-        return db.add('categories', entity);
+        return db.add('tbldanhmucbaiviet', entity);
     },
 
     /*
     params {*} entity {catname,catid}  
       */
      update: entity => {
-         var id = entity.id;
-         delete entity.id;
-         return db.update('categories','id' ,entity,id);
+         var id = entity.IDDM;
+         delete entity.IDDM;
+         return db.update('tbldanhmucbaiviet','IDDM' ,entity,id);
     },
 
     delete: id => {
-        return db.delete('categories', 'id', id);
+        return db.delete('tbldanhmucbaiviet', 'IDDM', id);
       }
 
 
