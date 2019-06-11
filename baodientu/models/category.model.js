@@ -6,8 +6,8 @@ module.exports = {
     },
 
     allWithDetails: () => {
-        return db.load(`select dm.*,count(bv.danhmucbaiviet) as num_of_products
-        from tbldanhmucbaiviet dm left join  tblbaiviet bv on dm.IDDM=bv.danhmucbaiviet 
+        return db.load(`select dm.*,count(bv.IDDM) as num_of_products
+        from tbldanhmucbaiviet dm left join  tblbaiviet bv on dm.IDDM=bv.IDDM
         group by dm.IDDM,dm.danhmucbaiviet`);
     },
 

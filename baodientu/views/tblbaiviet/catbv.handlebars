@@ -1,0 +1,64 @@
+<div class="card shadow">
+  <h5 class="card-header">
+    Products
+  </h5>
+  <div class="card-body">
+    {{#if this.empty}}
+    <p class="card-text">No tblbaiviet!</p>
+    {{else}}
+    <div class="row">
+      {{#each this.tblbaiviet}}
+      <div class="col-sm-4 mb-3">
+        <div class="card h-100 shadow-sm">
+          <img src="/imgs/sp/{{IDBV}}/main_thumbs.jpg" class="card-img-top" alt="{{title}}" title="{{title}}">
+          <div class="card-body">
+            <h6 class="card-title">{{title}}</h6>
+            <p class="card-text">
+              {{tomtat}}
+            </p>
+          </div>
+          <div class="card-footer">
+            <a href="/tblbaiviet/{{IDBV}}" class="btn btn-sm btn-outline-primary" title="View details">
+              <i class="fa fa-eye" aria-hidden="true"></i>
+              Details
+            </a>
+            <a href="javascript:;" class="btn btn-sm btn-outline-success">
+              <i class="fa fa-cart-plus" aria-hidden="true"></i>
+              Add to cart
+            </a>
+          </div>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+    {{!-- <div class="row">
+      <div class="col-sm-12">
+        <nav aria-label="Page navigation">
+          <ul class="pagination justify-content-center">
+            <li class="page-item disabled">
+              <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+            </li>
+            {{#each this.page_numbers}}
+            {{#if active}}
+            <li class="page-item active" aria-current="page">
+              <span class="page-link">
+                {{value}}
+                <span class="sr-only">(current)</span>
+              </span>
+            </li>
+            {{else}}
+            <li class="page-item">
+              <a class="page-link" href="?page={{value}}">{{value}}</a>
+            </li>
+            {{/if}}
+            {{/each}}
+            <li class="page-item">
+              <a class="page-link" href="#">Next</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div> --}}
+    {{/if}}
+  </div>
+</div>
